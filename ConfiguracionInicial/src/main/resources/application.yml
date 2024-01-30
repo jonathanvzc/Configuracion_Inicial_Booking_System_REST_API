@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Configuracion-Inicial
+server:
+  port: 8080
