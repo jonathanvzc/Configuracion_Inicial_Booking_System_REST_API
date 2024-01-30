@@ -1,5 +1,21 @@
 spring:
   application:
     name: Configuracion-Inicial
+  mvc:
+    pathmatch:
+      matching-strategy=ant-path-matcher:
 server:
-  port: 8080
+  port: 15467
+
+# Habilitar/deshabilitar api-docs - swagger-ui
+springdoc:
+  api-docs:
+    enabled: true
+    # Definir la ruta de swagger-ui
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
+  paths-to-match: /test/**, /xyz/**
+
+
+# En el navegador colocar: http://localhost:15467/doc/swagger-ui/index.html
