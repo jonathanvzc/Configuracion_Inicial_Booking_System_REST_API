@@ -4,8 +4,20 @@ spring:
   mvc:
     pathmatch:
       matching-strategy=ant-path-matcher:
+  jpa: # Mostrar las consultas SQL en el log (opcional, pero útil para depuración)
+    show-sql: true
+    hibernate: # Configuración JPA/Hibernate para la generación automática de esquema
+      ddl-auto: update
+  datasource: #Configuración de PostgreSQL
+    url: ${DB_URL_POSTGRESQL} #jdbc:postgresql://localhost:5432/tu_basededatos
+    username: ${DB_USUARIO_POSTGRESQL} #tu_usuario
+    password: ${DB_PASSWORD_POSTGRESQL} #
 server:
   port: 15467
+
+
+
+
 
 # Habilitar/deshabilitar api-docs - swagger-ui
 springdoc:
@@ -16,6 +28,7 @@ springdoc:
     enabled: true
     path: /doc/swagger-ui.html
   paths-to-match: /test/**, /xyz/**
-
-
 # En el navegador colocar: http://localhost:15467/doc/swagger-ui/index.html
+
+
+
